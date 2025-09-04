@@ -2504,8 +2504,7 @@ def init_database():
 
 @app.route('/')
 def index():
-    """Homepage with complete omnisystem interface"""
-    return render_template_string("""
+    return render_template('index.html')
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -3816,6 +3815,9 @@ def health():
 # ==========================================
 # MAIN STARTUP
 # ==========================================
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     init_database()
