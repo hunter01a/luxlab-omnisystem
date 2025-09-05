@@ -1,0 +1,12 @@
+[2025-09-05 18:22:38 +0200] [719112] [INFO] Starting gunicorn 23.0.0
+[2025-09-05 18:22:38 +0200] [719112] [ERROR] Connection in use: ('127.0.0.1', 8080)
+[2025-09-05 18:22:38 +0200] [719112] [ERROR] connection to ('127.0.0.1', 8080) failed: [Errno 98] Address already in use
+[2025-09-05 18:22:39 +0200] [719112] [ERROR] Connection in use: ('127.0.0.1', 8080)
+[2025-09-05 18:22:39 +0200] [719112] [ERROR] connection to ('127.0.0.1', 8080) failed: [Errno 98] Address already in use
+[2025-09-05 18:22:40 +0200] [719112] [ERROR] Connection in use: ('127.0.0.1', 8080)
+[2025-09-05 18:22:40 +0200] [719112] [ERROR] connection to ('127.0.0.1', 8080) failed: [Errno 98] Address already in use
+[2025-09-05 18:22:41 +0200] [719112] [ERROR] Connection in use: ('127.0.0.1', 8080)
+[2025-09-05 18:22:41 +0200] [719112] [ERROR] connection to ('127.0.0.1', 8080) failed: [Errno 98] Address already in use
+[2025-09-05 18:22:42 +0200] [719112] [ERROR] Connection in use: ('127.0.0.1', 8080)
+[2025-09-05 18:22:42 +0200] [719112] [ERROR] connection to ('127.0.0.1', 8080) failed: [Errno 98] Address already in use
+[2025-09-05 18:22:43 +0200] [719112] [ERROR] Can't connect to ('127.0.0.1', 8080)
