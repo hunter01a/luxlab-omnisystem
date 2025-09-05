@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🔥🔥🔥 LUXLAB ULTIMATE OMNISYSTEM v10.0 COMPLETE 🔥🔥🔥
+LUXLAB ULTIMATE OMNISYSTEM v10.0 COMPLETE
 Sistema definitivo omniscomprensivo che combina:
 - v3.0 FINALE: 23 competitor, Excel multi-taglia
 - v7.0 MASTER: 200+ identity rotation, portali B2B
@@ -74,7 +74,7 @@ import psutil
 from functools import lru_cache
 
 # ==========================================
-# 🌟 CONFIGURAZIONE OMNISYSTEM COMPLETA
+# CONFIGURAZIONE OMNISYSTEM COMPLETA
 # ==========================================
 
 load_dotenv()
@@ -120,9 +120,7 @@ class OmniSystemConfig:
     LOGS_PATH = './logs'
     CHROME_DRIVER_PATH = '/usr/bin/chromedriver'
     
-    # ===============================================
-    # 🎯 TUTTI I COMPETITOR SITES COMPLETI (30+)
-    # ===============================================
+    # TUTTI I COMPETITOR SITES COMPLETI (30+)
     COMPETITOR_SITES = {
         # Fashion Luxury Tier 1
         'farfetch': {'url': 'https://www.farfetch.com', 'tier': 1, 'type': 'marketplace'},
@@ -566,7 +564,7 @@ class SystemMetrics(db.Model):
     avg_processing_time = db.Column(db.Float)
 
 # ==========================================
-# 🧠 SITE PROFILE MANAGER INTELLIGENTE
+# SITE PROFILE MANAGER INTELLIGENTE
 # ==========================================
 
 class IntelligentSiteProfileManager:
@@ -630,12 +628,12 @@ class IntelligentSiteProfileManager:
         """Ottiene profilo ottimale per URL"""
         domain = urlparse(url).netloc
         
-        # Check se è un portale B2B
+        # Check se e' un portale B2B
         for portal_name, portal_config in OmniSystemConfig.B2B_PORTALS.items():
             if portal_config['pattern'] in domain:
                 return self.profiles.get(domain, self._create_b2b_profile(portal_name))
         
-        # Check se è un sito conosciuto
+        # Check se e' un sito conosciuto
         if domain in self.profiles:
             return self.profiles[domain]
         
@@ -752,12 +750,12 @@ class IntelligentSiteProfileManager:
         ]
 
 # ==========================================
-# 🎭 IDENTITY ROTATION SYSTEM AVANZATO
+# IDENTITY ROTATION SYSTEM AVANZATO
 # ==========================================
 
 class AdvancedIdentitySystem:
     """
-    Sistema avanzato di rotazione identità con 200+ profili
+    Sistema avanzato di rotazione identita' con 200+ profili
     """
     
     def __init__(self, pool_size=200):
@@ -769,10 +767,10 @@ class AdvancedIdentitySystem:
         self._generate_identity_pool()
     
     def _generate_identity_pool(self):
-        """Genera pool di identità uniche e realistiche"""
+        """Genera pool di identita' uniche e realistiche"""
         
         user_agents_2024 = [
-            # Chrome Windows (più comuni)
+            # Chrome Windows (piu' comuni)
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
@@ -829,9 +827,9 @@ class AdvancedIdentitySystem:
             self.identities.append(identity)
     
     def get_best_identity(self, domain):
-        """Ottiene la migliore identità per un dominio"""
+        """Ottiene la migliore identita' per un dominio"""
         
-        # Filtra identità disponibili
+        # Filtra identita' disponibili
         available = [
             i for i in self.identities 
             if i['id'] not in self.blocked_identities
@@ -839,7 +837,7 @@ class AdvancedIdentitySystem:
         ]
         
         if not available:
-            # Reset identità vecchie
+            # Reset identita' vecchie
             self._reset_old_identities(domain)
             available = self.identities[:20]
         
@@ -862,7 +860,7 @@ class AdvancedIdentitySystem:
                 break
     
     def mark_blocked(self, identity_id):
-        """Marca identità bloccata"""
+        """Marca identita' bloccata"""
         self.blocked_identities.add(identity_id)
         
         for identity in self.identities:
@@ -871,7 +869,7 @@ class AdvancedIdentitySystem:
                 break
     
     def _reset_old_identities(self, domain):
-        """Reset identità dopo 1 ora"""
+        """Reset identita' dopo 1 ora"""
         cutoff = datetime.now() - timedelta(hours=1)
         
         for identity in self.identities:
@@ -881,7 +879,7 @@ class AdvancedIdentitySystem:
                     self.blocked_identities.discard(identity['id'])
 
 # ==========================================
-# 🤖 AI COMPETITOR INTELLIGENCE ENHANCED
+# AI COMPETITOR INTELLIGENCE ENHANCED
 # ==========================================
 
 class EnhancedCompetitorIntelligenceAI:
@@ -909,7 +907,7 @@ class EnhancedCompetitorIntelligenceAI:
                 logger.info(f"Using cached analysis for {product_name}")
                 return cached_data
         
-        logger.info(f"🤖 AI Enhanced Market Analysis starting for: {product_name}")
+        logger.info(f"AI Enhanced Market Analysis starting for: {product_name}")
         
         market_data = {
             'ai_system': 'LUXLAB OmniSystem Intelligence v10.0',
@@ -1007,7 +1005,7 @@ class EnhancedCompetitorIntelligenceAI:
             if not search_url:
                 return self._generate_enhanced_fallback_price(competitor_name, brand, category)
             
-            # Timeout più breve per competitor analysis
+            # Timeout piu' breve per competitor analysis
             try:
                 # Mock scraping for now (replace with actual scraping)
                 await asyncio.sleep(random.uniform(0.1, 0.5))  # Simula scraping
@@ -1212,7 +1210,7 @@ class EnhancedCompetitorIntelligenceAI:
             elif avg_price > 800 and brand and any(lux in brand.upper() for lux in ['GUCCI', 'PRADA', 'VERSACE', 'FENDI', 'VALENTINO']):
                 return {
                     'recommended_strategy': 'PREMIUM',
-                    'reasoning': f'Luxury brand ({brand}) with high average market price (€{avg_price:.0f}) across premium competitors',
+                    'reasoning': f'Luxury brand ({brand}) with high average market price (EUR{avg_price:.0f}) across premium competitors',
                     'target_margin': random.randint(60, 75),
                     'confidence': 'VERY HIGH',
                     'target_price': price_stats['q3_price'] * 1.05,
@@ -1277,7 +1275,7 @@ class EnhancedCompetitorIntelligenceAI:
         return round(min(final_confidence, 98), 1)
 
 # ==========================================
-# 🚀 MASTER EXTRACTOR ENGINE COMPLETO
+# MASTER EXTRACTOR ENGINE COMPLETO
 # ==========================================
 
 class MasterOmniExtractor:
@@ -1314,14 +1312,14 @@ class MasterOmniExtractor:
             max_products = min(target, 15)  # Trial limit
         
         logger.info(f"""
-        🚀 OMNISYSTEM EXTRACTION STARTED
-        ╔══════════════════════════════════════════════╗
-        🎯 URL: {url}
-        📊 Type: {profile.get('type', 'unknown')}
-        🎯 Target: {max_products} products
-        📋 Strategy: {profile.get('strategy', 'adaptive')}
-        👤 User: {user.email if user else 'Anonymous'}
-        ╚══════════════════════════════════════════════╝
+        OMNISYSTEM EXTRACTION STARTED
+        =======================================
+        URL: {url}
+        Type: {profile.get('type', 'unknown')}
+        Target: {max_products} products
+        Strategy: {profile.get('strategy', 'adaptive')}
+        User: {user.email if user else 'Anonymous'}
+        =======================================
         """)
         
         # Rileva tipo e usa strategia appropriata
@@ -1338,14 +1336,14 @@ class MasterOmniExtractor:
         elapsed_time = (datetime.now() - self.stats['start_time']).seconds
         
         logger.info(f"""
-        ✅ OMNISYSTEM EXTRACTION COMPLETED
-        ╔══════════════════════════════════════════════╗
-        📦 Products: {len(final_products)}
-        ⏱️ Time: {elapsed_time}s
-        ⌛ Avg: {elapsed_time/len(final_products) if final_products else 0:.2f}s/product
-        ❌ Blocks: {self.stats['blocks']}
-        🔄 Identities: {self.stats['identities_used']}
-        ╚══════════════════════════════════════════════╝
+        OMNISYSTEM EXTRACTION COMPLETED
+        =======================================
+        Products: {len(final_products)}
+        Time: {elapsed_time}s
+        Avg: {elapsed_time/len(final_products) if final_products else 0:.2f}s/product
+        Blocks: {self.stats['blocks']}
+        Identities: {self.stats['identities_used']}
+        =======================================
         """)
         
         return final_products[:min(max_products, OmniSystemConfig.EXCEL_SAFE_ROWS)]
@@ -1445,7 +1443,7 @@ class MasterOmniExtractor:
                 except:
                     pass
             
-            # Quantità
+            # Quantita'
             if selectors.get('quantity'):
                 try:
                     qty_elem = element.find_element(By.CSS_SELECTOR, selectors['quantity'])
@@ -1629,7 +1627,7 @@ class MasterOmniExtractor:
             bulk_products = await self._try_bulk_extraction(url)
             if bulk_products:
                 all_products.extend(bulk_products)
-                logger.info(f"✅ Bulk: {len(bulk_products)} products")
+                logger.info(f"Bulk: {len(bulk_products)} products")
         
         # FASE 2: Estrazione parallela
         if len(all_products) < target:
@@ -1689,7 +1687,7 @@ class MasterOmniExtractor:
                                         })
                             
                             if products:
-                                logger.info(f"✅ Sitemap: {len(products)} URLs found")
+                                logger.info(f"Sitemap: {len(products)} URLs found")
                                 return products
                                 
             except Exception as e:
@@ -1735,7 +1733,7 @@ class MasterOmniExtractor:
                                         break
                             
                             if products:
-                                logger.info(f"🎯 API found: {pattern}")
+                                logger.info(f"API found: {pattern}")
                                 return self._normalize_api_products(products[:5000])
                                 
             except:
@@ -1765,7 +1763,7 @@ class MasterOmniExtractor:
         return normalized
     
     async def _parallel_extraction(self, url, target, profile):
-        """Estrazione parallela con identità multiple"""
+        """Estrazione parallela con identita' multiple"""
         products = []
         domain = urlparse(url).netloc
         
@@ -1798,10 +1796,10 @@ class MasterOmniExtractor:
         return products
     
     async def _extract_chunk(self, url, identity, profile, chunk_size, chunk_id):
-        """Estrae chunk con identità specifica"""
+        """Estrae chunk con identita' specifica"""
         products = []
         
-        # Crea sessione con identità
+        # Crea sessione con identita' 
         session = cloudscraper.create_scraper(
             browser={
                 'browser': 'chrome',
@@ -2039,7 +2037,7 @@ class MasterOmniExtractor:
         return unique
 
 # ==========================================
-# 📊 PROFESSIONAL EXCEL GENERATOR OMNISYSTEM
+# PROFESSIONAL EXCEL GENERATOR OMNISYSTEM
 # ==========================================
 
 class OmniSystemExcelGenerator:
@@ -2056,12 +2054,12 @@ class OmniSystemExcelGenerator:
         """
         
         logger.info(f"""
-        📊 GENERATING OMNISYSTEM EXCEL
-        ╔══════════════════════════════════════════════╗
-        📦 Products: {len(products)}
-        📊 Type: {portal_type}
-        👤 User: {user.email if user else 'Anonymous'}
-        ╚══════════════════════════════════════════════╝
+        GENERATING OMNISYSTEM EXCEL
+        =======================================
+        Products: {len(products)}
+        Type: {portal_type}
+        User: {user.email if user else 'Anonymous'}
+        =======================================
         """)
         
         # Split se necessario
@@ -2082,14 +2080,14 @@ class OmniSystemExcelGenerator:
             headers = [
                 'SKU/Codice', 'Brand', 'Nome Prodotto', 'Categoria',
                 'Prezzo Wholesale', 'Prezzo Retail', 'Margine %',
-                'Taglie', 'Quantità', 'Immagine', 'AI Analysis', 'Note'
+                'Taglie', 'Quantita', 'Immagine', 'AI Analysis', 'Note'
             ]
         else:
             headers = [
                 'STG', 'MACRO', 'Gender', 'Categoria', 'Foto',
                 'SKU', 'Collezione', 'Modello', 'Colore',
                 'Prezzo Retail', 'Prezzo Proposto', 'Sconto %',
-                'Quantità'
+                'Quantita'
             ]
             
             # Aggiungi colonne taglie
@@ -2163,17 +2161,17 @@ class OmniSystemExcelGenerator:
                     ws.cell(current_row, 4, product.get('category', 'PRODUCT'))
                     
                     wholesale = product.get('wholesale_price', product.get('price', 0))
-                    ws.cell(current_row, 5, wholesale).number_format = '€#,##0.00'
+                    ws.cell(current_row, 5, wholesale).number_format = 'EUR#,##0.00'
                     
                     retail = wholesale * 2.2
-                    ws.cell(current_row, 6, retail).number_format = '€#,##0.00'
+                    ws.cell(current_row, 6, retail).number_format = 'EUR#,##0.00'
                     
                     margin = ((retail - wholesale) / retail * 100) if retail > 0 else 0
                     ws.cell(current_row, 7, f"{margin:.1f}%")
                     
                     ws.cell(current_row, 8, product.get('sizes', ''))
                     ws.cell(current_row, 9, product.get('quantity', ''))
-                    ws.cell(current_row, 10, '🖼️' if product.get('image_url') else '-')
+                    ws.cell(current_row, 10, 'IMG' if product.get('image_url') else '-')
                     
                     if ai_analysis:
                         ws.cell(current_row, 11, f"{ai_analysis.get('confidence_score', 0)}%")
@@ -2190,7 +2188,7 @@ class OmniSystemExcelGenerator:
                     ws.cell(current_row, 2, product.get('brand', 'LUXURY'))
                     ws.cell(current_row, 3, self._detect_gender(product.get('name', '')))
                     ws.cell(current_row, 4, product.get('category', 'ITEM'))
-                    ws.cell(current_row, 5, '🖼️' if product.get('image_url') else '-')
+                    ws.cell(current_row, 5, 'IMG' if product.get('image_url') else '-')
                     ws.cell(current_row, 6, product.get('sku'))
                     ws.cell(current_row, 7, 'FW24')
                     ws.cell(current_row, 8, product.get('name', '')[:50])
@@ -2206,8 +2204,8 @@ class OmniSystemExcelGenerator:
                     
                     proposed = retail * (1 - margin)
                     
-                    ws.cell(current_row, 10, retail).number_format = '€#,##0.00'
-                    ws.cell(current_row, 11, proposed).number_format = '€#,##0.00'
+                    ws.cell(current_row, 10, retail).number_format = 'EUR#,##0.00'
+                    ws.cell(current_row, 11, proposed).number_format = 'EUR#,##0.00'
                     ws.cell(current_row, 12, f"{margin*100:.0f}%")
                     ws.cell(current_row, 13, random.randint(5, 50))
                     
@@ -2253,8 +2251,8 @@ class OmniSystemExcelGenerator:
         # Summary row
         summary_row = current_row + 1
         ws.cell(summary_row, 9, 'TOTALI:').font = Font(bold=True, size=12, color='E74C3C')
-        ws.cell(summary_row, 10, total_retail).number_format = '€#,##0.00'
-        ws.cell(summary_row, 11, total_proposed).number_format = '€#,##0.00'
+        ws.cell(summary_row, 10, total_retail).number_format = 'EUR#,##0.00'
+        ws.cell(summary_row, 11, total_proposed).number_format = 'EUR#,##0.00'
         
         # Salva
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -2492,25 +2490,26 @@ def init_database():
             
             db.session.commit()
             
-            logger.info("🎯 Database initialized successfully with omnisystem users")
+            logger.info("Database initialized successfully with omnisystem users")
             
         except Exception as e:
             logger.error(f"Database initialization failed: {e}")
             raise
 
 # ==========================================
-# 🌐 MAIN ROUTES
+# MAIN ROUTES
 # ==========================================
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    """Homepage with complete omnisystem interface"""
+    return render_template_string("""
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 LUXLAB OMNISYSTEM v10.0 - Ultimate B2B Platform</title>
+    <title>LUXLAB OMNISYSTEM v10.0 - Ultimate B2B Platform</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://js.stripe.com/v3/"></script>
@@ -2537,14 +2536,14 @@ def index():
         }
         
         .header {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             padding: 1.5rem 2rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .header-content {
@@ -2662,7 +2661,7 @@ def index():
             border-radius: 16px;
             padding: 2rem;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s;
         }
         
@@ -2693,7 +2692,7 @@ def index():
             border-radius: 24px;
             padding: 3rem;
             margin-bottom: 3rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .input-group {
@@ -2705,8 +2704,8 @@ def index():
         .url-input {
             flex: 1;
             padding: 1.2rem;
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             color: white;
             font-size: 1.1rem;
@@ -2715,7 +2714,7 @@ def index():
         .url-input:focus {
             outline: none;
             border-color: var(--accent-cyan);
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
         
         .btn-analyze {
@@ -2732,7 +2731,7 @@ def index():
         
         .btn-analyze:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,229,255,0.3);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
         }
         
         .btn-analyze:disabled {
@@ -2748,10 +2747,10 @@ def index():
         }
         
         .option-card {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
             padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         .option-label {
@@ -2765,8 +2764,8 @@ def index():
         .option-select {
             width: 100%;
             padding: 0.8rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             color: white;
         }
@@ -2786,7 +2785,7 @@ def index():
             backdrop-filter: blur(20px);
             border-radius: 16px;
             padding: 2rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
         }
         
@@ -2843,7 +2842,7 @@ def index():
         }
         
         .results-header {
-            background: linear-gradient(135deg, rgba(0,229,255,0.2), rgba(124,77,255,0.2));
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(124, 77, 255, 0.2));
             border-radius: 16px;
             padding: 2rem;
             margin-bottom: 2rem;
@@ -2864,10 +2863,10 @@ def index():
         }
         
         .product-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s;
         }
         
@@ -2883,7 +2882,8 @@ def index():
         
         .product-price {
             color: var(--accent-cyan);
-            font-size: 1.2rem;
+            font-size: 1
+	    font-size: 1.2rem;
             font-weight: 700;
         }
         
@@ -2893,7 +2893,7 @@ def index():
         }
         
         .competitor-table {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 16px;
             padding: 2rem;
             margin-top: 2rem;
@@ -2912,7 +2912,7 @@ def index():
         }
         
         th {
-            background: rgba(124,77,255,0.2);
+            background: rgba(124, 77, 255, 0.2);
             padding: 1rem;
             text-align: left;
             font-weight: 600;
@@ -2921,11 +2921,11 @@ def index():
         
         td {
             padding: 0.8rem 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         
         tr:hover {
-            background: rgba(255,255,255,0.02);
+            background: rgba(255, 255, 255, 0.02);
         }
         
         .price-cell {
@@ -2946,7 +2946,7 @@ def index():
         .spinner {
             width: 60px;
             height: 60px;
-            border: 4px solid rgba(255,255,255,0.1);
+            border: 4px solid rgba(255, 255, 255, 0.1);
             border-top-color: var(--accent-cyan);
             border-radius: 50%;
             animation: spin 1s linear infinite;
@@ -2999,7 +2999,7 @@ def index():
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
             z-index: 9999;
         }
@@ -3016,7 +3016,7 @@ def index():
             padding: 2.5rem;
             width: 90%;
             max-width: 450px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
         }
         
@@ -3050,8 +3050,8 @@ def index():
         .form-input {
             width: 100%;
             padding: 1rem;
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             color: white;
             font-size: 1rem;
@@ -3060,7 +3060,7 @@ def index():
         .form-input:focus {
             outline: none;
             border-color: var(--accent-cyan);
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
         
         .btn-submit {
@@ -3078,7 +3078,7 @@ def index():
         
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,229,255,0.3);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
         }
         
         .close-modal {
@@ -3111,7 +3111,7 @@ def index():
     <header class="header">
         <div class="header-content">
             <a href="/" class="logo">
-                <div class="logo-icon">🔥</div>
+                <div class="logo-icon">LX</div>
                 <div class="logo-text">LUXLAB OMNISYSTEM</div>
             </a>
             <div class="auth-buttons" id="authButtons">
@@ -3128,7 +3128,6 @@ def index():
     <div class="main-container">
         <section class="hero">
             <div class="hero-badge">
-                <span>⚡</span>
                 <span>v10.0 Complete Omnisystem</span>
             </div>
             <h1 class="hero-title">Sistema B2B Definitivo<br>con AI su 30+ Competitor</h1>
@@ -3159,7 +3158,7 @@ def index():
         
         <div class="converter-section">
             <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">
-                🚀 Convertitore Omnisystem
+                Convertitore Omnisystem
             </h2>
             
             <div class="alert" id="alertBox"></div>
@@ -3168,7 +3167,7 @@ def index():
                 <input type="url" class="url-input" id="catalogUrl" 
                        placeholder="https://sito.com/catalogo - Fashion, Mobili, B2B Portal, qualsiasi sito">
                 <button class="btn-analyze" id="analyzeBtn" onclick="startAnalysis()">
-                    🤖 Analizza con AI
+                    Analizza con AI
                 </button>
             </div>
             
@@ -3176,9 +3175,9 @@ def index():
                 <div class="option-card">
                     <div class="option-label">Strategia Pricing</div>
                     <select class="option-select" id="strategy">
-                        <option value="AGGRESSIVE">⚡ Aggressive (20-30%)</option>
-                        <option value="BALANCED" selected>⚖️ Balanced (40-50%)</option>
-                        <option value="PREMIUM">👑 Premium (60-75%)</option>
+                        <option value="AGGRESSIVE">Aggressive (20-30%)</option>
+                        <option value="BALANCED" selected>Balanced (40-50%)</option>
+                        <option value="PREMIUM">Premium (60-75%)</option>
                     </select>
                 </div>
                 <div class="option-card">
@@ -3194,10 +3193,10 @@ def index():
                 <div class="option-card">
                     <div class="option-label">Tipo Estrazione</div>
                     <select class="option-select" id="extractionType">
-                        <option value="auto">🤖 Auto-detect</option>
-                        <option value="public">🌐 Sito pubblico</option>
-                        <option value="b2b">🔒 Portale B2B</option>
-                        <option value="furniture">🏠 Mobili/Design</option>
+                        <option value="auto">Auto-detect</option>
+                        <option value="public">Sito pubblico</option>
+                        <option value="b2b">Portale B2B</option>
+                        <option value="furniture">Mobili/Design</option>
                     </select>
                 </div>
             </div>
@@ -3208,27 +3207,27 @@ def index():
                     Analisi AI in corso su 30+ competitor sites...
                 </p>
                 <p style="margin-top: 1rem; color: #9CA3AF;">
-                    Questo può richiedere alcuni minuti
+                    Questo puo' richiedere alcuni minuti
                 </p>
             </div>
         </div>
         
         <div class="results-section" id="resultsSection">
             <div class="results-header">
-                <h2 class="results-title">📊 Risultati Analisi AI</h2>
+                <h2 class="results-title">Risultati Analisi AI</h2>
                 <p id="resultsInfo"></p>
             </div>
             
             <div class="products-grid" id="productsGrid"></div>
             
             <div class="competitor-table" id="competitorTable" style="display:none;">
-                <h3>🤖 AI Competitor Analysis (30+ Sites)</h3>
+                <h3>AI Competitor Analysis (30+ Sites)</h3>
                 <table>
                     <thead>
                         <tr>
                             <th>Competitor</th>
                             <th>Prezzo Medio</th>
-                            <th>Disponibilità</th>
+                            <th>Disponibilita'</th>
                             <th>AI Score</th>
                             <th>Confidence</th>
                         </tr>
@@ -3239,18 +3238,18 @@ def index():
             
             <div style="text-align: center; margin-top: 3rem;">
                 <button class="btn-analyze" onclick="downloadExcel()">
-                    📥 Scarica Excel Omnisystem
+                    Scarica Excel Omnisystem
                 </button>
             </div>
         </div>
         
         <div class="features-section">
             <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">
-                🎯 Funzionalità Complete
+                Funzionalita' Complete
             </h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🌐</div>
+                    <div class="feature-icon">W</div>
                     <div class="feature-title">Supporto Universale</div>
                     <div class="feature-description">
                         Estrazione da qualsiasi tipo di sito
@@ -3265,7 +3264,7 @@ def index():
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
+                    <div class="feature-icon">AI</div>
                     <div class="feature-title">AI Intelligence</div>
                     <div class="feature-description">
                         Analisi competitor avanzata con ML
@@ -3280,7 +3279,7 @@ def index():
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
+                    <div class="feature-icon">XL</div>
                     <div class="feature-title">Excel Professional</div>
                     <div class="feature-description">
                         Export professionale multi-formato
@@ -3388,7 +3387,7 @@ def index():
             document.getElementById('toggleText').textContent = 
                 mode === 'login' 
                 ? 'Non hai un account? Registrati' 
-                : 'Hai già un account? Login';
+                : 'Hai gia un account? Login';
         }
         
         function closeModal() {
@@ -3479,7 +3478,7 @@ def index():
                     analysisData = data;
                     showResults(data);
                     showAlert('success', 
-                        `✅ Analisi completata! ${data.products_count} prodotti trovati`);
+                        'Analisi completata! ' + data.products_count + ' prodotti trovati');
                 } else {
                     showAlert('error', data.error || 'Analisi fallita');
                     
@@ -3498,12 +3497,11 @@ def index():
         function showResults(data) {
             document.getElementById('resultsSection').classList.add('active');
             
-            document.getElementById('resultsInfo').innerHTML = `
-                <strong>📦 ${data.products_count} prodotti estratti</strong><br>
-                🤖 AI Analysis: ${data.ai_analysis_included ? 'Attiva' : 'Non attiva'}<br>
-                ⏱️ Tempo: ${data.processing_time || 'N/A'}s<br>
-                📊 Tipo: ${data.portal_type || 'auto-detected'}
-            `;
+            document.getElementById('resultsInfo').innerHTML = 
+                '<strong>' + data.products_count + ' prodotti estratti</strong><br>' +
+                'AI Analysis: ' + (data.ai_analysis_included ? 'Attiva' : 'Non attiva') + '<br>' +
+                'Tempo: ' + (data.processing_time || 'N/A') + 's<br>' +
+                'Tipo: ' + (data.portal_type || 'auto-detected');
             
             // Show products
             const productsGrid = document.getElementById('productsGrid');
@@ -3513,11 +3511,10 @@ def index():
                 data.products.slice(0, 12).forEach(product => {
                     const card = document.createElement('div');
                     card.className = 'product-card';
-                    card.innerHTML = `
-                        <div class="product-name">${product.name || 'Product'}</div>
-                        <div class="product-price">€${product.price || '---'}</div>
-                        <div class="product-brand">${product.brand || 'BRAND'}</div>
-                    `;
+                    card.innerHTML = 
+                        '<div class="product-name">' + (product.name || 'Product') + '</div>' +
+                        '<div class="product-price">EUR' + (product.price || '---') + '</div>' +
+                        '<div class="product-brand">' + (product.brand || 'BRAND') + '</div>';
                     productsGrid.appendChild(card);
                 });
             }
@@ -3530,13 +3527,12 @@ def index():
                 
                 Object.entries(data.competitor_analysis.competitor_prices).forEach(([name, info]) => {
                     const row = tbody.insertRow();
-                    row.innerHTML = `
-                        <td>${name.toUpperCase()}</td>
-                        <td class="price-cell">€${info.price ? info.price.toFixed(2) : '---'}</td>
-                        <td>✅ Available</td>
-                        <td>${info.similarity_score ? (info.similarity_score * 100).toFixed(0) + '%' : '---'}</td>
-                        <td>${data.competitor_analysis.confidence_score || '---'}%</td>
-                    `;
+                    row.innerHTML = 
+                        '<td>' + name.toUpperCase() + '</td>' +
+                        '<td class="price-cell">EUR' + (info.price ? info.price.toFixed(2) : '---') + '</td>' +
+                        '<td>Available</td>' +
+                        '<td>' + (info.similarity_score ? (info.similarity_score * 100).toFixed(0) + '%' : '---') + '</td>' +
+                        '<td>' + (data.competitor_analysis.confidence_score || '---') + '%</td>';
                 });
             }
         }
@@ -3581,7 +3577,7 @@ def index():
         
         function showAlert(type, message) {
             const alertBox = document.getElementById('alertBox');
-            alertBox.className = `alert ${type} active`;
+            alertBox.className = 'alert ' + type + ' active';
             alertBox.textContent = message;
             
             setTimeout(() => {
@@ -3610,7 +3606,7 @@ def register():
         return jsonify({'error': 'Email, password e nome sono obbligatori'}), 400
     
     if User.query.filter_by(email=email).first():
-        return jsonify({'error': 'Email già registrata'}), 409
+        return jsonify({'error': 'Email gia registrata'}), 409
     
     user = User(
         email=email,
@@ -3815,35 +3811,32 @@ def health():
 # ==========================================
 # MAIN STARTUP
 # ==========================================
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 if __name__ == '__main__':
     init_database()
     
     print("""
-    🔥🔥🔥 LUXLAB OMNISYSTEM v10.0 COMPLETE STARTED 🔥🔥🔥
-    ╔══════════════════════════════════════════════════════════╗
-    ║                                                          ║
-    ║  ✅ 30+ Competitor Sites with AI Analysis              ║
-    ║  ✅ 200+ Identity Rotation System                      ║
-    ║  ✅ B2B Portal Support (Valentino, Gucci, Prada)      ║
-    ║  ✅ Universal Extraction (Fashion, Furniture, Jewelry) ║
-    ║  ✅ Up to 50,000 Products Extraction                   ║
-    ║  ✅ Multi-Size Excel with Auto-Split                   ║
-    ║  ✅ Complete Authentication & Database                 ║
-    ║  ✅ Stripe Payment Integration                         ║
-    ║  ✅ Enhanced AI Competitor Intelligence                ║
-    ║                                                          ║
-    ║  ACCOUNTS:                                               ║
-    ║  📧 admin@luxlab.it / luxlab2024omnisystem (Admin)     ║
-    ║  📧 vip@luxlab.it / vip2024 (Enterprise)               ║
-    ║  📧 demo@luxlab.it / demo2024 (Professional)           ║
-    ║                                                          ║
-    ║  Server: http://localhost:8080                          ║
-    ║                                                          ║
-    ╚══════════════════════════════════════════════════════════╝
+    LUXLAB OMNISYSTEM v10.0 COMPLETE STARTED
+    =======================================
+    
+    - 30+ Competitor Sites with AI Analysis
+    - 200+ Identity Rotation System
+    - B2B Portal Support (Valentino, Gucci, Prada)
+    - Universal Extraction (Fashion, Furniture, Jewelry)
+    - Up to 50,000 Products Extraction
+    - Multi-Size Excel with Auto-Split
+    - Complete Authentication & Database
+    - Stripe Payment Integration
+    - Enhanced AI Competitor Intelligence
+    
+    ACCOUNTS:
+    - admin@luxlab.it / luxlab2024omnisystem (Admin)
+    - vip@luxlab.it / vip2024 (Enterprise)
+    - demo@luxlab.it / demo2024 (Professional)
+    
+    Server: http://localhost:8080
+    
+    =======================================
     """)
     
     app.run(host='0.0.0.0', port=OmniSystemConfig.PORT, debug=False)
